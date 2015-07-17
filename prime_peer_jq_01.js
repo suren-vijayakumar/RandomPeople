@@ -11,41 +11,31 @@ $(document).ready(function(){
 		     this.age = age;
 		     this.gender = gender;
 		     this.weight = weight;
-			console.log("New Person is " + age + " years old and is a " + gender + " and weighs " + weight + " lbs");
+			//console.log("New Person is " + age + " years old and is a " + gender + " and weighs " + weight + " lbs"); test code
 			
 		}; 
 
 	$("#newPersonButton").on("click",function(){
-		var newPersonAge = randomNumber(1,100);
+		var newPersonAge = randomNumber(1,100)
 		var newPersonweight = randomNumber(1,100);
-		var newPersonGendernumber = randomNumber(1,100);
-
-		if(newPersonGendernumber>0 && newPersonGendernumber<=49){
-
-			newPersonGender = "Male";
-		}
-		else if(newPersonGendernumber>49 && newPersonGendernumber<=100){
-			newPersonGender = "Female";
-		}
-		
-		person(newPersonAge,newPersonGender,newPersonweight);
-
+		var newPersonGendernumber = randomNumber(0,1);
 		var maleFirstName = ["James", "John", "Andrew", "Paul", "Pete", "Jack", "Nathan", "Scott", "Joel", "Eric"];
 		var femaleFirstName = ["Beth", "Jen", "Samantha", "Steff", "Mary", "Liz", "Carol", "Michelle", "Jess", "Amy"];
 		var lastName = ["Brown", "Smith", "Johnson", "Miller", "Anderson", "Harris", "Mcckinley", "Lincoln", "Kennedy", "Martin"];
+		var lastNameChoice = lastName[randomNumber(0,9)];
 		var firstNameChoice;
 
-		if (newPersonGender === "Male") {
+		if(newPersonGendernumber === 0){
+			newPersonGender = "Male";
 			firstNameChoice = maleFirstName[randomNumber(0,9)];
-
 		}
-
-		else if (newPersonGender === "Female"){
+		else {
+			newPersonGender = "Female";
 			firstNameChoice = femaleFirstName[randomNumber(0,9)];
-
 		}
+		
+		//person(newPersonAge,newPersonGender,newPersonweight); test code.
 
-		var lastNameChoice = lastName[randomNumber(0,9)];
 		$(".newPersonName").children().remove();
 		$(".newPersonName").append("<p> New Person's name is " + firstNameChoice + " " +lastNameChoice + " </p>");
 		$(".newPersonAge").children().remove();
