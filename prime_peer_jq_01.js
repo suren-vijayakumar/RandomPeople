@@ -39,11 +39,11 @@ $(document).ready(function(){
 		$(".newPersonName").children().remove();
 		$(".newPersonName").append("<p> New Person's name is " + firstNameChoice + " " +lastNameChoice + " </p>");
 		$(".newPersonAge").children().remove();
-		$(".newPersonAge").append("<p> is " + age + " years old  </p>");
+		$(".newPersonAge").append("<p> is " + newPersonAge + " years old  </p>");
 		$(".newPersonGender").children().remove();
-		$(".newPersonGender").append("<p> and is a " + gender + " </p>");
+		$(".newPersonGender").append("<p> and is a " + newPersonGender + " </p>");
 		$(".newPersonWeight").children().remove();
-		$(".newPersonWeight").append("<p> and weighs " + weight + " lbs </p>");
+		$(".newPersonWeight").append("<p> and weighs " + newPersonweight + " lbs </p>");
 		
 
 	});
